@@ -46,5 +46,11 @@ namespace Demo.Pages
 
             await PopupNavigation.Instance.PushAsync(page);
         }
+
+        private async void OnOpenReproPage(object sender, EventArgs e)
+        {
+            var page = new ReproPage();
+            await Navigation.PushPopupAsync(page);
+        }
     }
 }
