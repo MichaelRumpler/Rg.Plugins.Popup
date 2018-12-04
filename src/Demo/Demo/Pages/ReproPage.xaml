@@ -2,65 +2,67 @@
 <pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-             x:Class="Demo.Pages.ReproPage">
+             x:Class="Demo.Pages.ReproPage"
+			HasKeyboardOffset="False"
+				 >
 
 
   <ContentPage.Resources>
     <ResourceDictionary>
       <Style x:Key="TitleContainer" TargetType="ContentView">
         <Setter Property="HeightRequest">
-          <OnPlatform x:TypeArguments="x:Double" iOS="43.5" Android="65" WinPhone="20" />
+          <OnPlatform x:TypeArguments="x:Double" iOS="43.5" Android="65" />
         </Setter>
         <Setter Property="Padding">
-          <OnPlatform x:TypeArguments="Thickness" iOS="0" Android="25,0,25,0" WinPhone="0" />
+          <OnPlatform x:TypeArguments="Thickness" iOS="0" Android="25,0,25,0" />
         </Setter>
       </Style>
       <Style x:Key="PopupTitle" TargetType="Label">
         <Setter Property="TextColor" Value="Black" />
         <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="FontSize">
-          <OnPlatform x:TypeArguments="x:Double" iOS="17" Android="20" WinPhone="20" />
+          <OnPlatform x:TypeArguments="x:Double" iOS="17" Android="20" />
         </Setter>
         <Setter Property="BackgroundColor">
-          <OnPlatform x:TypeArguments="Color" iOS="#F6F6F6" Android="White" WinPhone="White" />
+          <OnPlatform x:TypeArguments="Color" iOS="#F6F6F6" Android="White" />
         </Setter>
         <Setter Property="HorizontalTextAlignment">
-          <OnPlatform x:TypeArguments="TextAlignment" iOS="Center" Android="Start" WinPhone="Start" />
+          <OnPlatform x:TypeArguments="TextAlignment" iOS="Center" Android="Start" />
         </Setter>
         <Setter Property="VerticalTextAlignment" Value="Center" />
         <Setter Property="LineBreakMode" Value="TailTruncation" />
       </Style>
       <Style x:Key="HeaderSeperator" TargetType="BoxView">
         <Setter Property="HeightRequest">
-          <OnPlatform x:TypeArguments="x:Double" iOS="0.5" Android="0" WinPhone="0" />
+          <OnPlatform x:TypeArguments="x:Double" iOS="0.5" Android="0" />
         </Setter>
         <Setter Property="BackgroundColor">
-          <OnPlatform x:TypeArguments="Color" iOS="#7E7E7E" Android="White" WinPhone="White" />
+          <OnPlatform x:TypeArguments="Color" iOS="#7E7E7E" Android="White" />
         </Setter>
       </Style>
       <Style x:Key="PopupContentContainer" TargetType="StackLayout">
         <Setter Property="Spacing">
-          <OnPlatform x:TypeArguments="x:Double" iOS="20" Android="10" WinPhone="20" />
+          <OnPlatform x:TypeArguments="x:Double" iOS="20" Android="10" />
         </Setter>
         <Setter Property="Padding">
-          <OnPlatform x:TypeArguments="Thickness" iOS="20" Android="25,0,25,25" WinPhone="20" />
+          <OnPlatform x:TypeArguments="Thickness" iOS="20" Android="25,0,25,25" />
         </Setter>
         <Setter Property="VerticalOptions" Value="Center" />
       </Style>
       <Style x:Key="BodyText" TargetType="Label">
         <Setter Property="TextColor" Value="Black" />
         <Setter Property="FontSize">
-          <OnPlatform x:TypeArguments="x:Double" iOS="17" Android="17" WinPhone="20" />
+          <OnPlatform x:TypeArguments="x:Double" iOS="17" Android="17" />
         </Setter>
         <Setter Property="HorizontalTextAlignment">
-          <OnPlatform x:TypeArguments="TextAlignment" iOS="Center" Android="Start" WinPhone="Start" />
+          <OnPlatform x:TypeArguments="TextAlignment" iOS="Center" Android="Start" />
         </Setter>
         <Setter Property="VerticalTextAlignment" Value="Center" />
       </Style>
       <Style x:Key="ListText" TargetType="Label">
         <Setter Property="TextColor" Value="Black" />
         <Setter Property="FontSize">
-          <OnPlatform x:TypeArguments="x:Double" iOS="17" Android="17" WinPhone="20" />
+          <OnPlatform x:TypeArguments="x:Double" iOS="17" Android="17" />
         </Setter>
       </Style>
       <Style x:Key="iOSPopupButton" TargetType="Label">
@@ -76,10 +78,12 @@
 		x:Name="PopupContainer"
 		BackgroundColor="White"
 		WidthRequest="380"
-		VerticalOptions="Center"
+		VerticalOptions="Fill"
 		HorizontalOptions="Center">
 
-    <StackLayout Spacing="0">
+    <StackLayout
+		Spacing="0"
+		VerticalOptions="Center">
 
       <ContentView Style="{StaticResource TitleContainer}">
         <Label Text="Title" Style="{StaticResource PopupTitle}" />
